@@ -1,0 +1,67 @@
+/* Client Landing Typography System */
+:root {
+  --font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --font-weight-regular: 500;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+
+  /* Scale */
+  --fs-xxs: 12px;
+  --fs-xs: 13px;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 18px;
+  --fs-xl: 20px;
+  --fs-2xl: 24px;
+  --fs-3xl: 28px;
+  --fs-4xl: 32px;
+}
+
+html { font-size: 100%; }
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  letter-spacing: 0.1px;
+}
+
+/* Headings - consistent sizes across landing */
+h1, .h1 { font-size: var(--fs-4xl); font-weight: var(--font-weight-bold); line-height: 1.25; margin: 0 0 0.75rem; }
+h2, .h2 { font-size: var(--fs-3xl); font-weight: var(--font-weight-bold); line-height: 1.3; margin: 0 0 0.75rem; }
+h3, .h3 { font-size: var(--fs-2xl); font-weight: var(--font-weight-bold); line-height: 1.35; margin: 0 0 0.6rem; }
+h4, .h4 { font-size: var(--fs-xl);  font-weight: var(--font-weight-medium); line-height: 1.35; margin: 0 0 0.5rem; }
+h5, .h5 { font-size: var(--fs-lg);  font-weight: var(--font-weight-medium); line-height: 1.4;  margin: 0 0 0.5rem; }
+h6, .h6 { font-size: var(--fs-md);  font-weight: var(--font-weight-medium); line-height: 1.4;  margin: 0 0 0.5rem; }
+
+p { margin: 0 0 0.75rem; font-size: var(--fs-md); }
+small, .text-small { font-size: var(--fs-sm); }
+.text-xs { font-size: var(--fs-xs); }
+.text-xxs { font-size: var(--fs-xxs); }
+.text-lg { font-size: var(--fs-lg); }
+.text-xl { font-size: var(--fs-xl); }
+
+.subtitle { color: #bcbcbc; font-size: var(--fs-sm); }
+.lead    { font-size: var(--fs-lg); color: #eaeaea; line-height: 1.5; }
+
+/* Utility weights */
+.fw-regular { font-weight: var(--font-weight-regular); }
+.fw-medium  { font-weight: var(--font-weight-medium); }
+.fw-bold    { font-weight: var(--font-weight-bold); }
+
+/* Tighten headings on small screens */
+@media (max-width: 768px) {
+  h1, .h1 { font-size: var(--fs-3xl); }
+  h2, .h2 { font-size: var(--fs-2xl); }
+  h3, .h3 { font-size: var(--fs-xl); }
+}
+
+
+
+
+
+
+
+
+
+
