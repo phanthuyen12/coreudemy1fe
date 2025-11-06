@@ -5,7 +5,7 @@ const EmailPagination = () => {
       <div className="d-flex align-items-center justify-content-between">
         <div> Showing 1 - 20 of 289 </div>
         <ButtonGroup>
-          <Button variant="light" size="sm" type="button" className="icons-center py-2">
+          <Button  size="sm" type="button" className="icons-center py-2">
             <IconifyIcon icon="bx:chevron-left" />
           </Button>
           <Button variant="primary" size="sm" type="button" className="icons-center py-2">

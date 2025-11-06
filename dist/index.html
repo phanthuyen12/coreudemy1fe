@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Học cách ứng dụng AI, Automation & tư duy tài chính hiện đại để xây dựng hệ thống bán hàng tự động – tạo dòng tiền thực tế. Học miễn phí – Trải nghiệm ngay hôm nay!" />
+
+  <link rel="icon" href="/logoh3.png" />
+  <!-- Optional PWA assets removed to avoid 404 during dev -->
+
+  <title>3H STATION: Học – Hỏi – Hành với AI & Hệ thống kinh doanh thông minh</title>
+  <meta property="og:title" content="3H STATION: Học – Hỏi – Hành với AI & Hệ thống kinh doanh thông minh" />
+  <meta property="og:description" content="Ứng dụng AI & Automation để tối ưu marketing, vận hành; xây dựng thương hiệu cá nhân và hệ thống bán hàng tự động đã kiểm chứng." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/logoh3.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Signika:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS từ public -->
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/apexcharts.css" />
+  <link rel="stylesheet" href="/assets/css/calendar.css" />
+  <link rel="stylesheet" href="/assets/css/file-upload.css" />
+  <link rel="stylesheet" href="/assets/css/full-calendar.css" />
+  <link rel="stylesheet" href="/assets/css/jquery-ui.css" />
+  <link rel="stylesheet" href="/assets/css/editor-quill.css" />
+  <link rel="stylesheet" href="/assets/css/plyr.css" />
+  <link rel="stylesheet" href="/assets/css/slick.css" />
+  <link rel="stylesheet" href="/assets/css/jquery-jvectormap-2.0.5.css" />
+  
+  <!-- Tailwind CSS -->
+
+  <style>
+    #splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: white;
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.7s ease-out;
+    }
+
+    #splash-screen.remove {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  </style>
+  <script type="module" crossorigin src="/assets/index-BmJdQGgB.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CvJXyVvx.css">
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <div id="splash-screen">
+    <img alt="Logo" class="light" src="/logoh3.png" style="height: 10%" />
+  </div>
+
+  <!-- Removed legacy public scripts to avoid 404s and DOM errors during SPA dev -->
+
+  <!-- React entry point -->
+
+  <script>
+    const rootEl = document.getElementById('root');
+    const splashScreen = document.getElementById('splash-screen');
+
+    // Ẩn splash screen khi root có nội dung
+    const observer = new MutationObserver((mutationsList, observer) => {
+      for (const mutation of mutationsList) {
+        if (mutation.type === 'childList' && rootEl.hasChildNodes()) {
+          splashScreen.classList.add('remove');
+          observer.disconnect();
+          break;
+        }
+      }
+    });
+
+    observer.observe(rootEl, { childList: true });
+  </script>
+</body>
+
+</html>

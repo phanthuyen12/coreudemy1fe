@@ -344,7 +344,7 @@ const Dashboard = () => {
         </div>
         <Button className="facebook-btn">
           <IconifyIcon icon="ri:facebook-fill" />
-          Nhóm học viên của Lê Duy Hiệp
+          Nhóm học viên của 3H STATION
         </Button>
       </div>
 

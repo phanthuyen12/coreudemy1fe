@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import PageBreadcrumb from '@/admin/components/layout/PageBreadcrumb';
 import PageMetaData from '@/admin/components/PageTitle';
 import { colorVariants } from '@/admin/context/constants';
-import cardImg from '../assets/images/small/img-1.jpg';
-import cardImg2 from '../assets/images/small/img-2.jpg';
-import cardImg3 from '../assets/images/small/img-3.jpg';
-import cardImg4 from '../assets/images/small/img-4.jpg';
-import cardImg5 from '../assets/images/small/img-5.jpg';
+
+import cardImg from '../../../../assets/images/small/img-1.jpg';
+import cardImg2 from '../../../../assets/images/small/img-2.jpg';
+import cardImg3 from '../../../../assets/images/small/img-3.jpg';
+import cardImg4 from '../../../../assets/images/small/img-4.jpg';
+import cardImg5 from '../../../../assets/images/small/img-5.jpg';
 const CardWithImage = () => {
   return <Card className="mb-3 mb-xl-0">
       <img className="card-img-top img-fluid" src={cardImg} alt="img-1" />

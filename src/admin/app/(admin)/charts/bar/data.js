@@ -1,4 +1,4 @@
-import small4 from '../assets/images/small/img-4.jpg';
+import small4 from '../../../../../assets/images/small/img-4.jpg';
 export const basicChartOpts = {
   chart: {
     height: 380,

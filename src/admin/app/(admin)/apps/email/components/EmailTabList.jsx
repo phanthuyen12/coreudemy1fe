@@ -16,29 +16,29 @@ const EmailTopbar = () => {
     }
   } = useEmailContext();
   return <div className="d-flex flex-wrap gap-2">
-      <Button onClick={toggle} variant="light" className="d-xxl-none d-flex align-items-center px-2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#EmailSidebaroffcanvas" aria-controls="EmailSidebaroffcanvas">
+      <Button onClick={toggle}  className="d-xxl-none d-flex align-items-center px-2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#EmailSidebaroffcanvas" aria-controls="EmailSidebaroffcanvas">
         <IconifyIcon icon="bx:menu" className="fs-18" />
       </Button>
       <ButtonGroup>
         <OverlayTrigger placement="top" overlay={<Tooltip>Archive</Tooltip>}>
-          <Button type="button" variant="light">
+          <Button type="button" >
             <IconifyIcon icon="bx:archive" className="fs-18" />
           </Button>
         </OverlayTrigger>
         <OverlayTrigger placement="top" overlay={<Tooltip>Mark as spam</Tooltip>}>
-          <Button variant="light" type="button">
+          <Button  type="button">
             <IconifyIcon icon="bx:info-square" className="fs-18" />
           </Button>
         </OverlayTrigger>
         <OverlayTrigger placement="top" overlay={<Tooltip>Delete</Tooltip>}>
-          <Button variant="light" type="button">
+          <Button  type="button">
             <IconifyIcon icon="bx:trash" className="fs-18" />
           </Button>
         </OverlayTrigger>
       </ButtonGroup>
       <OverlayTrigger placement="top" overlay={<Tooltip>Folder</Tooltip>}>
         <Dropdown as={ButtonGroup}>
-          <DropdownToggle variant="light" type="button" className="arrow-none icons-center">
+          <DropdownToggle  type="button" className="arrow-none icons-center">
             <IconifyIcon icon="bx:folder" className="fs-18 me-1" />
             <IconifyIcon icon="bx:chevron-down" height={16} width={16} />
           </DropdownToggle>
@@ -61,7 +61,7 @@ const EmailTopbar = () => {
       </OverlayTrigger>
       <OverlayTrigger placement="top" overlay={<Tooltip>Labels</Tooltip>}>
         <Dropdown as={ButtonGroup}>
-          <DropdownToggle variant="light" className="arrow-none icons-center">
+          <DropdownToggle  className="arrow-none icons-center">
             <IconifyIcon icon="bx:bookmarks" className="fs-18 me-1" />
             <IconifyIcon icon="bx:chevron-down" height={16} width={16} />
           </DropdownToggle>
@@ -84,7 +84,7 @@ const EmailTopbar = () => {
       </OverlayTrigger>
       <OverlayTrigger placement="top" overlay={<Tooltip>More Actions</Tooltip>}>
         <Dropdown as={ButtonGroup}>
-          <DropdownToggle variant="light" className="arrow-none icons-center">
+          <DropdownToggle  className="arrow-none icons-center">
             More
             <IconifyIcon icon="bx:chevron-down" height={16} width={16} className="ms-1" />
           </DropdownToggle>

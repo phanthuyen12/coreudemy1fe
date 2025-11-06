@@ -4,7 +4,7 @@ const Accounts = () => {
   return <Card>
       <CardHeader className="d-flex justify-content-between align-items-center">
         <CardTitle>New Accounts</CardTitle>
-        <Button variant="light" size="sm">
+        <Button  size="sm">
           View All
         </Button>
       </CardHeader>

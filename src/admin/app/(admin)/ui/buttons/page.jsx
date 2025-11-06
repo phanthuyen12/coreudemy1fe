@@ -157,20 +157,20 @@ const ButtonGroup = () => {
       <Row>
         <Col md={6}>
           <div className="btn-group mb-1 me-1">
-            <Button variant="light">Left</Button>
-            <Button variant="light">Middle</Button>
-            <Button variant="light">Right</Button>
+            <Button >Left</Button>
+            <Button >Middle</Button>
+            <Button >Right</Button>
           </div>
           <div className="btn-group mb-1 me-1">
-            <Button variant="light">1</Button>
-            <Button variant="light">2</Button>
+            <Button >1</Button>
+            <Button >2</Button>
             <Button variant="secondary">3</Button>
-            <Button variant="light">4</Button>
+            <Button >4</Button>
           </div>
           <div className="btn-group mb-1 me-1">
-            <Button variant="light">5</Button>
+            <Button >5</Button>
             <Button variant="secondary">6</Button>
-            <Button variant="light">7</Button>
+            <Button >7</Button>
             <Dropdown>
               <DropdownToggle id="dropdown" type="button" className="btn btn-light arrow-none">
                 Dropdown <IconifyIcon icon="bx:bx-chevron-down" />
@@ -188,13 +188,13 @@ const ButtonGroup = () => {
         </Col>
         <Col md={6}>
           <div className="btn-group-vertical me-4">
-            <Button variant="light">Top</Button>
-            <Button variant="light">Middle</Button>
-            <Button variant="light">Bottom</Button>
+            <Button >Top</Button>
+            <Button >Middle</Button>
+            <Button >Bottom</Button>
           </div>
           <div className="btn-group-vertical">
-            <Button variant="light">Button 1</Button>
-            <Button variant="light">Button 2</Button>
+            <Button >Button 1</Button>
+            <Button >Button 2</Button>
             <Dropdown>
               <DropdownToggle id="dropdown" type="button" className="btn btn-light arrow-none">
                 Button 3 <IconifyIcon icon="bx:bx-chevron-down" />

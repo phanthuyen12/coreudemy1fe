@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { authStorage, loginApi, registerApi } from '../services/auth';
+import { authStorage, loginApi, registerApi, resetPasswordApi } from '../services/auth';
 
 const AuthContext = createContext(null);
 
@@ -70,7 +70,21 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => { setToken(null); setUser(null); };
 
-  const value = useMemo(() => ({ token, user, loading, error, login, register, logout, isAuthenticated: !!token }), [token, user, loading, error]);
+  const resetPassword = async (email) => {
+    setLoading(true); setError('');
+    try {
+      const res = await resetPasswordApi(email);
+      showToast('Email đặt lại mật khẩu đã được gửi! Vui lòng kiểm tra hộp thư của bạn.', 'success');
+      return res;
+    } catch (e) { 
+      setError(e.message || 'Gửi email thất bại'); 
+      showToast(e.message || 'Gửi email thất bại', 'error'); 
+      throw e; 
+    }
+    finally { setLoading(false); }
+  };
+
+  const value = useMemo(() => ({ token, user, loading, error, login, register, logout, resetPassword, isAuthenticated: !!token }), [token, user, loading, error]);
   return (
     <AuthContext.Provider value={value}>
       {children}

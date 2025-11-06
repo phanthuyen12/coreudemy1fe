@@ -30,7 +30,7 @@ const AdminBankingPage = lazy(()=> import('@/admin/app/(admin)/pages/banking/pag
 // Pages Routes
 const Welcome = lazy(() => import('@/admin/app/(admin)/pages/welcome/page'));
 const FAQs = lazy(() => import('@/admin/app/(admin)/pages/faqs/page'));
-const Profile = lazy(() => import('@/admin/app/(admin)/pages/profile/page'));
+// const Profile = lazy(() => import('@/admin/app/(admin)/pages/profile/page'));
 const Tickets = lazy(() => import('@/admin/app/(admin)/pages/tickets/page'));
 const ComingSoon = lazy(() => import('@/admin/app/(other)/coming-soon/page'));
 const ContactUs = lazy(() => import('@/admin/app/(admin)/pages/contact-us/page'));
@@ -88,8 +88,7 @@ const Radar = lazy(() => import('@/admin/app/(admin)/charts/radar/page'));
 const RadialBar = lazy(() => import('@/admin/app/(admin)/charts/radial-bar/page'));
 const Scatter = lazy(() => import('@/admin/app/(admin)/charts/scatter/page'));
 const Polar = lazy(() => import('@/admin/app/(admin)/charts/polar/page'));
-const GoogleMaps = lazy(() => import('@/admin/app/(admin)/maps/google/page'));
-const VectorMaps = lazy(() => import('@/admin/app/(admin)/maps/vector/page'));
+
 
 // Forms Routes
 const Basic = lazy(() => import('@/admin/app/(admin)/forms/basic/page'));
@@ -131,6 +130,8 @@ const LockScreen2 = lazy(() => import('@/admin/app/(other)/auth/lock-screen-2/pa
 const Members = lazy(() => import('@/admin/app/(admin)/pages/members/page'));
 const MembersDetail = lazy(() => import('@/admin/app/(admin)/pages/members/[memberId]/page'));
 const Courser = lazy(() => import('@/admin/app/(admin)/pages/courses/page'));
+const DocumentCategoriesPage = lazy(() => import('@/admin/app/(admin)/pages/document-categories/page'));
+const DocumentsPage = lazy(() => import('@/admin/app/(admin)/pages/documents/page'));
 const VideoCategoriesPage = lazy(() => import('@/admin/app/(admin)/pages/video-categories/page'));
 const CourseVideosPage = lazy(() => import('@/admin/app/(admin)/pages/course-videos/page'));  
 const VideoDetailPage = lazy(() => import('@/admin/app/(admin)/pages/course-videos/[videoId]/page'));
@@ -166,6 +167,16 @@ element: <EnrollmentPage />
   path: '/page/courses',
   name: 'Courses',
   element: <Courser />
+},
+{
+  path: '/page/document-categories',
+  name: 'DocumentCategories',
+  element: <DocumentCategoriesPage />
+},
+{
+  path: '/page/documents',
+  name: 'Documents',
+  element: <DocumentsPage />
 },
 {
   path: '/page/video-categories',
@@ -293,11 +304,7 @@ const customRoutes = [{
   name: 'FAQs',
   path: '/pages/faqs',
   element: <FAQs />
-}, {
-  name: 'Profile',
-  path: '/pages/profile',
-  element: <Profile />
-}, {
+},  {
   name: 'Tickets',
   path: '/pages/tickets',
   element: <Tickets />
@@ -500,14 +507,6 @@ const chartsNMapsRoutes = [{
   name: 'Polar Area',
   path: '/charts/polar',
   element: <Polar />
-}, {
-  name: 'Google',
-  path: '/maps/google',
-  element: <GoogleMaps />
-}, {
-  name: 'Vector',
-  path: '/maps/vector',
-  element: <VectorMaps />
 }];
 const formsRoutes = [{
   name: 'Basic Elements',

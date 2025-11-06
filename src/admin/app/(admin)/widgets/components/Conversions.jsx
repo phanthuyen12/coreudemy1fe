@@ -200,7 +200,7 @@ const Conversions = () => {
                 </Col>
               </Row>
               <div className="text-center">
-                <Button variant="light" type="button" className="shadow-none w-100">
+                <Button  type="button" className="shadow-none w-100">
                   View Details
                 </Button>
               </div>

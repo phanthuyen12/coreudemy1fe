@@ -1,18 +1,18 @@
-import googleMail from '../assets/images/app-calendar/google-mail.png';
-import googleAnalytics from '../assets/images/app-calendar/google-analytics.png';
-import googleMeet from '../assets/images/app-calendar/google-meet.png';
-import googleIntercom from '../assets/images/app-calendar/intercom.png';
-import microsoftOutlook from '../assets/images/app-calendar/microsoft-outlook.png';
-import googleChrome from '../assets/images/app-calendar/google-chrome.png';
-import hubSpot from '../assets/images/app-calendar/hubspot.png';
-import stripe from '../assets/images/app-calendar/stripe.png';
-import slack from '../assets/images/app-calendar/slack.png';
-import salesForce from '../assets/images/app-calendar/sales-force.png';
-import webHooks from '../assets/images/app-calendar/web-hooks.png';
-import facebook from '../assets/images/app-calendar/facebook.png';
-import teamConference from '../assets/images/app-calendar/microsoft-team-conference.png';
-import zapier from '../assets/images/app-calendar/zapier.png';
-import zoom from '../assets/images/app-calendar/zoom.png';
+import googleMail from '../../../../../assets/images/app-calendar/google-mail.png';
+import googleAnalytics from '../../../../../assets/images/app-calendar/google-analytics.png';
+import googleMeet from '../../../../../assets/images/app-calendar/google-meet.png';
+import googleIntercom from '../../../../../assets/images/app-calendar/intercom.png';
+import microsoftOutlook from '../../../../../assets/images/app-calendar/microsoft-outlook.png';
+import googleChrome from '../../../../../assets/images/app-calendar/google-chrome.png';
+import hubSpot from '../../../../../assets/images/app-calendar/hubspot.png';
+import stripe from '../../../../../assets/images/app-calendar/stripe.png';
+import slack from '../../../../../assets/images/app-calendar/slack.png';
+import salesForce from '../../../../../assets/images/app-calendar/sales-force.png';
+import webHooks from '../../../../../assets/images/app-calendar/web-hooks.png';
+import facebook from '../../../../../assets/images/app-calendar/facebook.png';
+import teamConference from '../../../../../assets/images/app-calendar/microsoft-team-conference.png';
+import zapier from '../../../../../assets/images/app-calendar/zapier.png';
+import zoom from '../../../../../assets/images/app-calendar/zoom.png';
 export const IntegrationData = [{
   name: 'Google Mail',
   image: googleMail,

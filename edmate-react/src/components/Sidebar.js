@@ -41,7 +41,7 @@ const Sidebar = ({ isOpen, onClose }) => {
     { title: 'THÔNG BÁO', icon: 'ph ph-chats-teardrop', path: '/messages' },
     { title: 'AFFILIATE', icon: 'ph ph-chart-bar', path: '/analytics' },
     { title: 'CHÍNH SÁCH', icon: 'ph ph-calendar-dots', path: '/events' },
-    { title: 'NÂNG CẤP', icon: 'ph ph-crown', path: '/pricing' }
+    { title: 'NÂNG CẤP', icon: 'ph ph-crown', path: '/learn/study' }
   ];
 
   // const settingsItems = [
@@ -169,7 +169,7 @@ const Sidebar = ({ isOpen, onClose }) => {
             <div className="mt-n74">
               <h5 className="mb-4 mt-22">Get Pro Certificate</h5>
               <p className="">Explore 400+ courses with lifetime members</p>
-              <Link to="/pricing" className="btn btn-main mt-16 rounded-pill">Get Access</Link>
+              <Link to="/learn/study" className="btn btn-main mt-16 rounded-pill">Get Access</Link>
             </div>
           </div>
         </div>

@@ -21,7 +21,7 @@ const CustomerCard = ({
             {customer.phone}
           </Link>
           <br />
-          <Link to="" className="btn btn-sm btn-outline-primary mt-2">
+          <Link to="" className="btn btn-sm btn-primary mt-2">
             View All Details
           </Link>
         </div>

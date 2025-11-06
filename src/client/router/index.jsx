@@ -5,10 +5,13 @@ import Dashboard from '../pages/Dashboard';
 import Courses from '../pages/Courses';
 import CourseDetail from '../pages/CourseDetail';
 import CourseProfile from '../pages/CourseProfile';
+import Documents from '../pages/Documents';
+import DocumentDetail from '../pages/DocumentDetail';
 import LandingLDH from '../pages/LandingLDH';
 import  Profile from '../pages/Profile'
 import YourTicket from '../pages/YourTicket'
 import ChangePassword from '../pages/ChangePassword'
+import ResetPassword from '../pages/ResetPassword'
 import Notifications from '../pages/Notifications'
 import Affiliate from '../pages/Affiliate'
 import LandingLearn from '../pages/LandingLearn';
@@ -31,6 +34,8 @@ const ClientRouter = () => {
           <Route path="courses" element={<Courses />} />
           <Route path="course" element={<CourseDetail />} />
           {/* <Route path="course-profile" element={<CourseProfile />} /> */}
+          <Route path="documents" element={<Documents />} />
+          <Route path="documents/:id" element={<DocumentDetail />} />
           <Route path="learn/study" element={<LeanStudy />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="profile" element={<Profile />} />
@@ -41,6 +46,8 @@ const ClientRouter = () => {
         </Route>
         <Route path="learn/landing" element={<LandingLearn />} />
       </Route>
+      {/* Public reset password page - không cần Layout và đăng nhập */}
+      <Route path="reset-password" element={<ResetPassword />} />
     </Routes>
   );
 };

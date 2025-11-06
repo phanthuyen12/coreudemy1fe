@@ -3,7 +3,8 @@ import { Card, CardBody, Col, Row } from 'react-bootstrap';
 import LogoBox from '@/admin/components/LogoBox';
 import PageMetaData from '@/admin/components/PageTitle';
 import ResetPassForm from './components/ResetPassForm';
-import signInImg from '../assets/images/sign-in.svg';
+import signInImg from '../../../../../assets/images/sign-in.svg';
+
 const ResetPassword = () => {
   return <>
       <PageMetaData title="Reset Password" />

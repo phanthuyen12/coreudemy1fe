@@ -2,7 +2,17 @@ import React, { useState } from 'react';
 import { Icon as IconifyIcon } from '@iconify/react';
 import { useAuth } from '../context/AuthContext';
 import '../assets/css/LandingLearn.css'; // Giữ lại import CSS gốc
-
+import bienkienthuc from '../../assets/images/3hstation/BIEN_KIEN_THUC_THANH_HE_THONG_KIEM_TIEN_THUC_TE.png';
+import duan1 from '../../assets/images/3hstation/6.png';
+import duan2 from '../../assets/images/3hstation/7.png';
+import duan3 from '../../assets/images/3hstation/8.png';
+import duan4 from '../../assets/images/3hstation/9.png';
+import TANG1 from '../../assets/images/3hstation/TANG1.png';
+import TANG2 from '../../assets/images/3hstation/TANG2.png';
+import TANG3 from '../../assets/images/3hstation/TANG3.png';
+import TANG4 from '../../assets/images/3hstation/TANG4.png';
+import QUYENLOI from '../../assets/images/3hstation/quyenloi.png';
+import DONGHANH from '../../assets/images/3hstation/donghanh.png';
 // Extracted to avoid state reset when parent re-renders
 const SignupForm = ({ onRegister, loading }) => {
     const [email, setEmail] = useState('');
@@ -41,7 +51,7 @@ const SignupForm = ({ onRegister, loading }) => {
     );
   };
 
-const LoginForm = ({ onLogin, loading }) => {
+const LoginForm = ({ onLogin, loading, onForgotPassword }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [remember, setRemember] = useState(true);
@@ -61,16 +71,63 @@ const LoginForm = ({ onLogin, loading }) => {
         </div>
         <div className="d-flex align-items-center justify-content-between small text-muted">
           <label className="d-flex align-items-center gap-2"><input type="checkbox" checked={remember} onChange={(e)=>setRemember(e.target.checked)} /> Ghi nhớ đăng nhập</label>
-          <a href="#reset" style={{color:'#ffbf00', textDecoration:'none'}}>Quên mật khẩu?</a>
+          <a href="#reset" onClick={(e) => { e.preventDefault(); onForgotPassword(); }} style={{color:'#ffbf00', textDecoration:'none', cursor:'pointer'}}>Quên mật khẩu?</a>
         </div>
         <button type="submit" disabled={loading} className="ldh-btn-primary w-100">{loading? 'ĐANG XỬ LÝ...':'ĐĂNG NHẬP'}</button>
       </form>
     );
   };
 
+const ForgotPasswordForm = ({ onResetPassword, loading, onBack }) => {
+    const [email, setEmail] = useState('');
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      if (!email) { setError('Vui lòng nhập email'); return; }
+      try { 
+        await onResetPassword(email);
+        setSuccess(true);
+        setError('');
+      } catch (err) { 
+        setError(err.message); 
+        setSuccess(false);
+      }
+    };
+    if (success) {
+      return (
+        <div className="d-flex flex-column gap-2 text-center">
+          <div style={{color:'#38d065', fontSize: 48, marginBottom: 8}}>✓</div>
+          <div className="fw-bold" style={{color:'#fff'}}>Email đã được gửi!</div>
+          <div className="small" style={{color:'#aaa'}}>Vui lòng kiểm tra hộp thư của bạn để nhận link đặt lại mật khẩu.</div>
+          <button onClick={onBack} className="ldh-btn-primary w-100 mt-2">Quay lại đăng nhập</button>
+        </div>
+      );
+    }
+    return (
+      <form onSubmit={handleSubmit} className="d-flex flex-column gap-2">
+        {error && <div className="small" style={{color:'#ff6b6b'}}>{error}</div>}
+        <div className="small text-muted mb-2">Nhập email của bạn để nhận link đặt lại mật khẩu</div>
+        <input 
+          className="ldh-input" 
+          type="email"
+          placeholder="Email" 
+          value={email} 
+          onChange={(e)=>setEmail(e.target.value)} 
+        />
+        <button type="submit" disabled={loading} className="ldh-btn-primary w-100">
+          {loading? 'ĐANG GỬI...':'GỬI EMAIL ĐẶT LẠI MẬT KHẨU'}
+        </button>
+        <button type="button" onClick={onBack} className="cta-btn outline w-100" style={{marginTop: 8}}>
+          Quay lại đăng nhập
+        </button>
+      </form>
+    );
+  };
+
 const LandingLearn = () => {
-  const [heroTab, setHeroTab] = useState('signup'); // 'signup' | 'login'
-  const { login, register, loading } = useAuth();
+  const [heroTab, setHeroTab] = useState('signup'); // 'signup' | 'login' | 'forgot'
+  const { login, register, resetPassword, loading } = useAuth();
   
   // Custom Bullet Component with hover effect
   const Bullet = ({ children }) => (
@@ -195,15 +252,15 @@ const LandingLearn = () => {
         {/* HERO */}
         <section className="ldh-learn-hero">
           <div>
-            <span className="ldh-learn-badge"><IconifyIcon icon="ri:robot-fill" /> Kỷ nguyên AI & Kinh doanh số</span>
-            <h1 className="ldh-learn-title">3H STATION: HỌC – HỎI – HÀNH VỚI AI & HỆ THỐNG KINH DOANH SỐ</h1>
-            <p className="ldh-learn-sub">Nắm vững Tư duy tài chính, Ứng dụng AI/Automation và Xây dựng hệ thống bán hàng thông minh. Đăng ký là học ngay, hoàn toàn miễn phí các bài học nền tảng.</p>
+            <span className="ldh-learn-badge "><IconifyIcon icon="ri:robot-fill" /> Kỷ nguyên AI & Kinh doanh số</span>
+            <h1 className="ldh-learn-title ">3H STATION: HỌC – HỎI – HÀNH VỚI AI & HỆ THỐNG KINH DOANH THÔNG MINH</h1>
+            <p className="ldh-learn-sub">Học cách ứng dụng AI, Automation & Tư duy tài chính hiện đại để xây dựng hệ thống bán hàng tự động – tạo dòng tiền thực tế.</p>
 
             <div className="ldh-grid-4" style={{display:'grid', gridTemplateColumns:'repeat(4, minmax(0,1fr))', gap:12, marginTop: 16}}>
-              <Stat num="2896" label="Học viên PRO" />
-              <Stat num="4" label="Khoá đã ra mắt" />
-              <Stat num="9698" label="Học viên Free" />
-              <Stat num="90%" label="Tăng trưởng sau học" />
+              <Stat num="200+" label="học viên PRO" />
+              <Stat num="4" label="mentor thực chiến" />
+              <Stat num="9.698+" label="giờ học thực tế" />
+              <Stat num="90%" label="áp dụng được sau học" />
             </div>
           </div>
 
@@ -212,34 +269,41 @@ const LandingLearn = () => {
             <div className="d-flex align-items-center justify-content-between mb-2">
               <div className="d-flex align-items-center gap-2">
                 <div style={{width:28, height:28, borderRadius:6, background:'#ffd700'}} />
-                <div className="fw-bold">Đăng ký là học được ngay, miễn phí</div>
+                <div className="fw-bold">🚀 ĐĂNG KÝ HỌC THỬ NGAY – HOÀN TOÀN MIỄN PHÍ</div>
               </div>
               <span className="badge" style={{background:'#ffbf00', color:'#000'}}>FREE</span>
             </div>
-            <div className="ldh-grid-3 mb-3">
+            {/* <div className="ldh-grid-3 mb-3">
               <div className="ldh-card text-center">KHÔNG CẦN NẠP THẺ</div>
               <div className="ldh-card text-center">KHÔNG NHẬP FORM</div>
               <div className="ldh-card text-center">ĐĂNG NHẬP LÀ HỌC NGAY</div>
-            </div>
+            </div> */}
             {/* Tabs: Đăng ký | Đăng nhập - CTA primary & outline (toggle color) */}
-            <div className="hero-tabbar">
-              <button
-                onClick={()=>setHeroTab('signup')}
-                className={`cta-btn ${heroTab==='signup' ? 'primary' : 'outline'}`}
-              >Đăng ký ngay</button>
-              <button
-                onClick={()=>setHeroTab('login')}
-                className={`cta-btn ${heroTab==='login' ? 'primary' : 'outline'}`}
-              >Đăng nhập</button>
-            </div>
-            <div className="mb-2 small" style={{color:'#e9c860'}}>Không có thêm bước nào cả. <span className="text-warning fw-bold">Đăng ký là xem được ngay!</span></div>
+            {heroTab !== 'forgot' && (
+              <div className="hero-tabbar">
+                <button
+                  onClick={()=>setHeroTab('signup')}
+                  className={`cta-btn ${heroTab==='signup' ? 'primary' : 'outline'}`}
+                >ĐĂNG KÝ NGAY</button>
+                <button
+                  onClick={()=>setHeroTab('login')}
+                  className={`cta-btn ${heroTab==='login' ? 'primary' : 'outline'}`}
+                >Đăng nhập</button>
+              </div>
+            )}
+            {heroTab !== 'forgot' && (
+              <div className="mb-2 small" style={{color:'#e9c860'}}>Không cần thẻ, không cần đăng nhập phức tạp. Chỉ 1 phút đăng ký – nhận ngay quyền truy cập học thử.</div>
+            )}
             <div className="ldh-form">
               {heroTab==='signup' ? (
                 <SignupForm onRegister={register} loading={loading} />
+              ) : heroTab==='forgot' ? (
+                <ForgotPasswordForm onResetPassword={resetPassword} loading={loading} onBack={()=>setHeroTab('login')} />
               ) : (
-                <LoginForm onLogin={login} loading={loading} />
+                <LoginForm onLogin={login} loading={loading} onForgotPassword={()=>setHeroTab('forgot')} />
               )}
             </div>
+            <div className="small text-center mt-2" style={{color:'#aaa'}}>🆓 Học miễn phí | Hiệu quả cao | Không ràng buộc</div>
           </div>
         </section>
         
@@ -249,21 +313,30 @@ const LandingLearn = () => {
           <div className="ldh-card cta-split" style={{padding:20, display:'grid', gridTemplateColumns:'1fr 1fr', gap:24, alignItems:'center'}}>
             <div>
               <div className="ldh-subtitle-pill ldh-rotating" style={{display:'inline-block', marginBottom:10}}>KHỞI ĐỘNG HÀNH TRÌNH 3H</div>
-              <h3 className="ldh-title-xl" style={{textAlign:'left'}}>BIẾN KIẾN THỨC THÀNH HỆ THỐNG KIẾM TIỀN THỰC TẾ</h3>
+              <div className="ldh-title-xl" style={{textAlign:'left'}}>🎓 BIẾN KIẾN THỨC THÀNH HỆ THỐNG KIẾM TIỀN THỰC TẾ</div>
               <ul className="list-unstyled m-0" style={{display:'flex', flexDirection:'column', gap:10, marginTop:10}}>
-                {ctaBullets.map((text, idx) => <Bullet key={idx}>{text}</Bullet>)}
+                {[
+                  '✅ Làm chủ tư duy tài chính & kinh doanh hiện đại để phát triển bền vững.',
+                  '✅ Ứng dụng công cụ AI & Workflow Automation giúp tiết kiệm 90% thời gian marketing và vận hành.',
+                  '✅ Xây dựng thương hiệu cá nhân & hệ thống bán hàng tự động có kiểm chứng thực tế.',
+                  '✅ Học qua case study từ Ros và các mentor có kinh nghiệm trong hệ sinh thái 3H.',
+                  '✅ Cơ hội kết nối cộng đồng, tham gia dự án và tạo thu nhập thực tế.'
+                ].map((text, idx) => <Bullet key={idx}>{text}</Bullet>)}
               </ul>
             </div>
-            <div className="ldh-img-card"><div className="ldh-img" style={{aspectRatio:'16/9'}} /></div>
+            <div className="ldh-img-card">
+              <img src={bienkienthuc} className="ldh-img" style={{aspectRatio:'16/9'}}  alt="Biến kiến thức thành hệ thống kiếm tiền thực tế" />
+
+              </div>
           </div>
         </section>
 
         {/* --- */}
         {/* STUDENT RESULTS EXPANDED */}
-        <section className="ldh-section">
+        {/* <section className="ldh-section">
           <div className="ldh-title-wrap">
             <div className="ldh-subtitle-pill ldh-rotating">THÀNH QUẢ TỪ HỆ THỐNG 3H</div>
-            <h2 className="ldh-title-xl" style={{fontSize:24}}>CÁC DỰ ÁN KINH DOANH SỐ THÀNH CÔNG</h2>
+           <div className="ldh-title-xl" >CÁC DỰ ÁN KINH DOANH SỐ THÀNH CÔNG</div>
           </div>
           <div className="ldh-grid-4">
             {Array.from({length:8}).map((_,i)=> (
@@ -272,19 +345,19 @@ const LandingLearn = () => {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
         
         {/* --- */}
         {/* PROJECTS/BRANDS (CẬP NHẬT BRANDING) */}
         <section className="ldh-section faq-bg">
           <div className="ldh-title-wrap">
-            <h2 className="ldh-title-xl">CÁC DỰ ÁN & THƯƠNG HIỆU ĐƯỢC HỆ THỐNG 3H ĐỒNG HÀNH</h2>
+            <div className="ldh-title-xl" >CÁC DỰ ÁN & THƯƠNG HIỆU ĐƯỢC HỆ THỐNG 3H ĐỒNG HÀNH</div>
             <div className="ldh-subtitle-pill ldh-rotating">TỪ STARTUP ĐẾN SOLOPRENEUR AI</div>
           </div>
           <div className="ldh-grid-4">
-            {[0,1,2,3].map((i)=> (
+            {[duan1, duan2, duan3, duan4].map((img, i)=> (
               <div key={i} className="ldh-img-card">
-                <div className="ldh-img" />
+                <img src={img} className="ldh-img" alt={`Dự án ${i + 1}`} />
                 <div className="mt-2 fw-semibold" style={{color:'#fff'}}>Dự án {i===2? 'Blockchain & Crypto': i===1? 'Thương mại điện tử (E-commerce)': i===3? 'Giải pháp AI Marketing':'Xây dựng cộng đồng Solopreneur'}</div>
               </div>
             ))}
@@ -296,12 +369,17 @@ const LandingLearn = () => {
         <section className="ldh-section">
           <div className="ldh-title-wrap">
             <div className="ldh-subtitle-pill ldh-rotating">THÀNH QUẢ CỦA HỌC VIÊN</div>
-            <h2 className="ldh-title-xl" style={{fontSize: 24}}>TĂNG TRƯỞNG THU NHẬP VÀ HIỆU SUẤT</h2>
+            <div className="ldh-title-xl" >TĂNG TRƯỞNG THU NHẬP VÀ HIỆU SUẤT</div>
           </div>
           <div className="ldh-grid-4">
-            {[0,1,2,3].map((i)=> (
+            {[TANG1, TANG2, TANG3, TANG4].map((img, i)=> (
               <div key={i} className="ldh-img-card">
-                <div className="ldh-phone" />
+<img
+  src={img}
+  className="ldh-img"
+  alt={`Thành quả học viên ${i + 1}`}
+  style={{ height: '600px' }}
+/>
               </div>
             ))}
           </div>
@@ -321,7 +399,7 @@ const LandingLearn = () => {
               </ul>
             </div>
             <div className="ldh-img-card">
-              <div className="ldh-img" style={{aspectRatio:'16/9'}} />
+              <img src={QUYENLOI} className="ldh-img" style={{aspectRatio:'16/9'}} alt="Quyền lợi khi tham gia khóa học Premium" />
             </div>
           </div>
         </section>
@@ -330,7 +408,9 @@ const LandingLearn = () => {
         {/* ACCOMPANIMENT (CẬP NHẬT NỘI DUNG ĐỒNG HÀNH) */}
         <section className="ldh-section">
           <div className="ldh-grid-2">
-            <div className="ldh-img-card"><div className="ldh-img" style={{aspectRatio:'16/9'}} /></div>
+            <div className="ldh-img-card">
+              <img src={DONGHANH} className="ldh-img" style={{aspectRatio:'16/9'}} alt="Học - Hỏi - Hành: Đồng hành tới khi ra kết quả" />
+            </div>
             <div>
               <div className="ldh-title-xl" style={{textAlign:'left'}}>HỌC – HỎI – HÀNH: ĐỒNG HÀNH TỚI KHI RA KẾT QUẢ</div>
               <div className="ldh-subtitle-pill ldh-rotating" style={{display:'inline-block', marginBottom: 14}}>MỤC TIÊU CUỐI CÙNG LÀ TẠO RA THU NHẬP</div>
@@ -351,7 +431,7 @@ const LandingLearn = () => {
         <section className="ldh-section">
           <div className="ldh-title-wrap">
             <div className="ldh-subtitle-pill ldh-rotating">NHỮNG CÂU HỎI THƯỜNG GẶP</div>
-            <h2 className="ldh-title-xl" style={{fontSize:24}}>KHI THAM GIA HỆ SINH THÁI 3H STATION</h2>
+            <div className="ldh-title-xl" >KHI THAM GIA HỆ SINH THÁI 3H STATION</div>
           </div>
           <div className="ldh-card" style={{padding:0}}>
             {faqList.map((item,idx)=> (
@@ -367,6 +447,16 @@ const LandingLearn = () => {
           </div>
         </section>
       </div>
+      {/* CONTACT */}
+      {/* <section className="ldh-section" style={{paddingTop:0}}>
+        <div className="ldh-card" style={{display:'flex', justifyContent:'space-between', alignItems:'center', flexWrap:'wrap', gap:12}}>
+          <div className="fw-bold" style={{color:'#ffd700'}}>LIÊN HỆ</div>
+          <div className="d-flex align-items-center gap-3" style={{color:'#eee'}}>
+            <div>Hotline: <strong>0911 809 909</strong></div>
+            <div>Email: <strong>Support.3HStation@gmail.com</strong></div>
+          </div>
+        </div>
+      </section> */}
     </div>
   );
 };

@@ -6,7 +6,8 @@ import PageBreadcrumb from '@/admin/components/layout/PageBreadcrumb';
 import { currency } from '@/admin/context/constants';
 import SubmissionButton from './components/SubmissionButton';
 import PageMetaData from '@/admin/components/PageTitle';
-import logoDark from '../assets/images/logo-dark.png';
+
+import logoDark from '../../../../../assets/images/logo-dark.png';
 const InvoiceDetail = () => {
   const [invoice, setInvoice] = useState();
   const {

@@ -12,7 +12,7 @@ const Layout = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
   const isLearnOnly = location.pathname.startsWith('/learn') && location.pathname !== '/learn/study';
-  const isDashboardPage = location.pathname === '/dashboard' || location.pathname === '/profile' || location.pathname === '/tickets' || location.pathname === '/change-password' || location.pathname === '/notifications' || location.pathname === '/affiliate';
+  const isDashboardPage = location.pathname === '/dashboard' || location.pathname === '/profile' || location.pathname === '/tickets' || location.pathname === '/change-password' || location.pathname === '/notifications' || location.pathname === '/affiliate' || location.pathname.startsWith('/documents');
   const isStudyPage = location.pathname === '/learn/study';
 
   // Check screen size

@@ -2,8 +2,9 @@ import useToggle from '@/admin/hooks/useToggle';
 import { useState } from 'react';
 import { Button, Col, Form, Row, Toast, ToastBody, ToastContainer, ToastHeader } from 'react-bootstrap';
 import ReactSelect from 'react-select';
-import logoDark from '../assets/images/logo-dark.png';
-import logoLight from '../assets/images/logo-light.png';
+
+import logoDark from '../../../../../assets/images/logo-dark.png';
+import logoLight from '../../../../../assets/images/logo-light.png';
 import ComponentContainerCard from '@/admin/components/ComponentContainerCard';
 const BasicToast = () => {
   const {
@@ -152,7 +153,7 @@ const CustomToast = () => {
             <ToastBody className="text-white">
               Hello, world! This is a toast message.
               <div className="mt-2 pt-2 border-top d-flex flex-wrap gap-1">
-                <Button variant="light" className="btn-sm">
+                <Button  className="btn-sm">
                   Take action
                 </Button>
                 <Button variant="secondary" className="btn-sm" onClick={hideCustom4}>

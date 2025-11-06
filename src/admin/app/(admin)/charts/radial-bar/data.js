@@ -1,4 +1,5 @@
-import small2 from '../assets/images/small/img-2.jpg';
+
+import small2 from '../../../../../assets/images/small/img-2.jpg';
 export const basicRadialBarOpts = {
   chart: {
     height: 320,

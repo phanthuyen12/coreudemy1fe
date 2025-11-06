@@ -254,9 +254,14 @@ const LeanStudy = () => {
 
   // Tính tổng thời lượng khóa học, chỉ tính lại khi courseData thay đổi
   const totalCourseDuration = useMemo(() => {
-    if (!courseData?.categories) return "0:00";
-    const totalSeconds = courseData.categories.reduce((total, category) => {
-      return total + category.videos.reduce((catTotal, video) => catTotal + (video.duration || 0), 0);
+    const categories = Array.isArray(courseData?.categories) ? courseData.categories : [];
+    const totalSeconds = categories.reduce((total, category) => {
+      const videos = Array.isArray(category?.videos) ? category.videos : [];
+      const sumCategory = videos.reduce((catTotal, video) => {
+        const seconds = Number(video?.duration ?? 0);
+        return catTotal + (Number.isFinite(seconds) ? seconds : 0);
+      }, 0);
+      return total + sumCategory;
     }, 0);
     return formatDuration(totalSeconds);
   }, [courseData]);
@@ -779,13 +784,13 @@ const LeanStudy = () => {
                   <IconifyIcon icon="ri:list-check" className="tab-icon" />
                   <span className="tab-text">Danh mục</span>
                 </div>
-                <div 
+                {/* <div 
                   className={`tab-item ${activeTab === 'mota' ? 'active' : ''}`}
                   onClick={() => setActiveTab('mota')}
                 >
                   <IconifyIcon icon="ri:file-text-line" className="tab-icon" />
                   <span className="tab-text">Mô tả</span>
-                </div>
+                </div> */}
                 {/* <div 
                   className={`tab-item ${activeTab === 'binhluan' ? 'active' : ''}`}
                   onClick={() => setActiveTab('binhluan')}

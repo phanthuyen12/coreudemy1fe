@@ -14,10 +14,10 @@ import { useChatContext } from '@/admin/context/useChatContext';
 import { useLayoutContext } from '@/admin/context/useLayoutContext';
 import { addOrSubtractMinutesFromDate, timeSince } from '@/admin/utils/date';
 import { getFileExtensionIcon } from '@/admin/utils/get-icons';
-import small1 from '../assets/images/small/img-1.jpg';
-import small2 from '../assets/images/small/img-2.jpg';
-import small3 from '../assets/images/small/img-3.jpg';
-import avatar10 from '../assets/images/users/avatar-10.jpg';
+import small1 from '../../../../../../assets/images/small/img-1.jpg';
+import small2 from '../../../../../../assets/images/small/img-2.jpg';
+import small3 from '../../../../../../assets/images/small/img-3.jpg';
+import avatar10 from '../../../../../../assets/images/users/avatar-10.jpg';
 const MessageDropdown = ({
   message,
   toUser
@@ -379,7 +379,7 @@ const ChatArea = ({
   } = useLayoutContext();
   return <Card className="position-relative overflow-hidden">
       <CardHeader className="d-flex align-items-center mh-100">
-        <Button variant="light" onClick={chatList.toggle} className="d-xxl-none d-flex align-items-center px-2 me-2" type="button">
+        <Button  onClick={chatList.toggle} className="d-xxl-none d-flex align-items-center px-2 me-2" type="button">
           <IconifyIcon icon="bx:menu" className="fs-18" />
         </Button>
         <div className="d-flex align-items-center">
@@ -461,10 +461,10 @@ const ChatArea = ({
               <Col sm="auto">
                 <div>
                   <div className="btn-group btn-toolbar">
-                    <Button variant="light" size="sm">
+                    <Button  size="sm">
                       <IconifyIcon icon="bx:paperclip" className="fs-18" />
                     </Button>
-                    <Button variant="light" size="sm">
+                    <Button  size="sm">
                       <IconifyIcon icon="bx:video" className="fs-18" />
                     </Button>
                     <Button variant="primary" size="sm" type="submit" className="chat-send">

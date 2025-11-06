@@ -3,7 +3,7 @@ import { Card, CardBody, Col, Row } from 'react-bootstrap';
 import LogoBox from '@/admin/components/LogoBox';
 import LockScreenForm from './components/LockScreenForm';
 import PageMetaData from '@/admin/components/PageTitle';
-import signInImg from '../assets/images/sign-in.svg';
+import signInImg from '../../../../../assets/images/sign-in.svg';
 const LockScreen = () => {
   return <>
       <PageMetaData title="Lock Screen" />

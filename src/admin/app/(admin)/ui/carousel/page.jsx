@@ -3,16 +3,17 @@ import ComponentContainerCard from '@/admin/components/ComponentContainerCard';
 import PageBreadcrumb from '@/admin/components/layout/PageBreadcrumb';
 import UIExamplesList from '@/admin/components/UIExamplesList';
 import PageMetaData from '@/admin/components/PageTitle';
-import Img1 from '../assets/images/small/img-1.jpg';
-import Img10 from '../assets/images/small/img-10.jpg';
-import Img2 from '../assets/images/small/img-2.jpg';
-import Img3 from '../assets/images/small/img-3.jpg';
-import Img4 from '../assets/images/small/img-4.jpg';
-import Img5 from '../assets/images/small/img-5.jpg';
-import Img6 from '../assets/images/small/img-6.jpg';
-import Img7 from '../assets/images/small/img-7.jpg';
-import Img8 from '../assets/images/small/img-8.jpg';
-import Img9 from '../assets/images/small/img-9.jpg';
+
+import Img1 from '../../../../assets/images/small/img-1.jpg';
+import Img10 from '../../../../assets/images/small/img-10.jpg';
+import Img2 from '../../../../assets/images/small/img-2.jpg';
+import Img3 from '../../../../assets/images/small/img-3.jpg';
+import Img4 from '../../../../assets/images/small/img-4.jpg';
+import Img5 from '../../../../assets/images/small/img-5.jpg';
+import Img6 from '../../../../assets/images/small/img-6.jpg';
+import Img7 from '../../../../assets/images/small/img-7.jpg';
+import Img8 from '../../../../assets/images/small/img-8.jpg';
+import Img9 from '../../../../assets/images/small/img-9.jpg';
 const SlidesOnly = () => {
   return <ComponentContainerCard id="slides-only" title="Slides Only" description={<>
           Here’s a carousel with slides only. Note the presence of the <code>.d-block</code> and <code>.img-fluid</code> on carousel images to prevent

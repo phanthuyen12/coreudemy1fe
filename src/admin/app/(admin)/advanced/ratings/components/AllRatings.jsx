@@ -42,7 +42,7 @@ const ResetButtonRating = () => {
         <Rating value={rating} onChange={setRating} style={{
         maxWidth: '160px'
       }} />
-        <Button variant="light" size="sm" onClick={() => setRating(0)}>
+        <Button  size="sm" onClick={() => setRating(0)}>
           Reset
         </Button>
       </div>

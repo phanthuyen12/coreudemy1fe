@@ -243,7 +243,7 @@ const ContextualListGroup = () => {
             <ListGroupItem variant="danger">A simple danger list group item</ListGroupItem>
             <ListGroupItem variant="warning">A simple warning list group item</ListGroupItem>
             <ListGroupItem variant="info">A simple info list group item</ListGroupItem>
-            <ListGroupItem variant="light">A simple light list group item</ListGroupItem>
+            <ListGroupItem >A simple light list group item</ListGroupItem>
             <ListGroupItem variant="dark">A simple dark list group item</ListGroupItem>
           </BSListGroup>
         </Col>

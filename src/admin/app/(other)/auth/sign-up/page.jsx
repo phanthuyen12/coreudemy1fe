@@ -4,7 +4,7 @@ import LogoBox from '@/admin/components/LogoBox';
 import PageMetaData from '@/admin/components/PageTitle';
 import ThirdPartyAuth from '@/admin/components/ThirdPartyAuth';
 import SignUpForm from './components/SignUpForm';
-import signUpImg from '../assets/images/sign-in.svg';
+import signInImg from '../../../../../assets/images/sign-in.svg';
 const SignUp = () => {
   return <>
       <PageMetaData title="Sign Up" />

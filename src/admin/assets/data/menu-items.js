@@ -46,11 +46,23 @@ export const MENU_ITEMS = [
     label: 'Danh mục video',
     url: '/page/video-categories',
   },
+  {
+    key: 'document-categories',
+    icon: 'mdi:folder-outline',
+    label: 'Danh mục tài liệu',
+    url: '/page/document-categories',
+  },
  {
     key: 'videos',
     icon: 'iconamoon:folder-video-duotone',
     label: 'Video',
     url: '/page/videos',
+  },
+  {
+    key: 'documents',
+    icon: 'mdi:file-document-outline',
+    label: 'Tài liệu',
+    url: '/page/documents',
   },
   {
     key: 'enrollments',
