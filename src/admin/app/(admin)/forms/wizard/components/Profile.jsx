@@ -1,4 +1,5 @@
-import avatar1 from '../assets/images/users/dummy-avatar.jpg';
+
+import avatar1 from '../../../../../../assets/images/users/dummy-avatar.jpg';
 import IconifyIcon from '@/admin/components/wrappers/IconifyIcon';
 import TextFormInput from '@/admin/components/form/TextFormInput';
 import { useForm } from 'react-hook-form';

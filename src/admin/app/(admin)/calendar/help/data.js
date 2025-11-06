@@ -1,9 +1,9 @@
-import help1 from '../assets/images/app-calendar/help-1.png';
-import help2 from '../assets/images/app-calendar/help-2.png';
-import help3 from '../assets/images/app-calendar/help-3.png';
-import help4 from '../assets/images/app-calendar/help-4.png';
-import help5 from '../assets/images/app-calendar/help-5.png';
-import help6 from '../assets/images/app-calendar/help-6.png';
+import help1 from '../../../../../assets/images/app-calendar/help-1.png';
+import help2 from '../../../../../assets/images/app-calendar/help-2.png';
+import help3 from '../../../../../assets/images/app-calendar/help-3.png';
+import help4 from '../../../../../assets/images/app-calendar/help-4.png';
+import help5 from '../../../../../assets/images/app-calendar/help-5.png';
+import help6 from '../../../../../assets/images/app-calendar/help-6.png';
 export const helpData = [{
   image: help1,
   title: 'Getting Started',

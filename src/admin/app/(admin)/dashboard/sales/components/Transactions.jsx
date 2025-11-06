@@ -14,7 +14,7 @@ const Transactions = () => {
   return <Card>
       <CardHeader className="d-flex justify-content-between align-items-center">
         <CardTitle>Recent Transactions</CardTitle>
-        <Button variant="light" size="sm">
+        <Button  size="sm">
           View All
         </Button>
       </CardHeader>

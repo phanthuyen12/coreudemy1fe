@@ -87,7 +87,7 @@ const AddEditEvent = ({
                   </button>}
               </Col>
               <Col xs={6} className="text-end">
-                <Button variant="light" type="button" className="me-1" onClick={toggle}>
+                <Button  type="button" className="me-1" onClick={toggle}>
                   Cancel
                 </Button>
                 <Button variant="primary" type="submit">

@@ -125,11 +125,11 @@ const OutlineBadges = () => {
         </>}>
       <div className="mb-2">
         <span className="badge badge-outline-primary me-1">Primary</span>
-        <span className="badge badge-outline-secondary me-1">Secondary</span>
+        <span className="badge badge-danger me-1">Secondary</span>
         <span className="badge badge-outline-success me-1">Success</span>
         <span className="badge badge-outline-info me-1">Info</span>
-        <span className="badge badge-outline-warning me-1">Warning</span>
-        <span className="badge badge-outline-danger me-1">Danger</span>
+        <span className="badge badge-warning me-1">Warning</span>
+        <span className="badge badge-danger me-1">Danger</span>
         <span className="badge badge-outline-dark me-1">Dark</span>
         <span className="badge badge-outline-purple me-1">Purple</span>
         <span className="badge badge-outline-pink me-1">Pink</span>
@@ -137,11 +137,11 @@ const OutlineBadges = () => {
       </div>
       <div>
         <span className="badge badge-outline-primary rounded-pill me-1">Primary</span>
-        <span className="badge badge-outline-secondary rounded-pill me-1">Secondary</span>
+        <span className="badge badge-danger rounded-pill me-1">Secondary</span>
         <span className="badge badge-outline-success rounded-pill me-1">Success</span>
         <span className="badge badge-outline-info rounded-pill me-1">Info</span>
-        <span className="badge badge-outline-warning rounded-pill me-1">Warning</span>
-        <span className="badge badge-outline-danger rounded-pill me-1">Danger</span>
+        <span className="badge badge-warning rounded-pill me-1">Warning</span>
+        <span className="badge badge-danger rounded-pill me-1">Danger</span>
         <span className="badge badge-outline-dark rounded-pill me-1">Dark</span>
         <span className="badge badge-outline-purple rounded-pill me-1">Purple</span>
         <span className="badge badge-outline-pink rounded-pill me-1">Pink</span>

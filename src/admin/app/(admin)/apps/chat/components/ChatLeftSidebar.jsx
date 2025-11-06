@@ -7,7 +7,7 @@ import Contact from './Contact';
 import Group from './Group';
 import IconifyIcon from '@/admin/components/wrappers/IconifyIcon';
 import { useChatContext } from '@/admin/context/useChatContext';
-import avatar1 from '../assets/images/users/avatar-1.jpg';
+import avatar1 from '../../../../../../assets/images/users/avatar-1.jpg';
 import 'swiper/css';
 const ChatLeftSidebar = ({
   users,

@@ -9,9 +9,10 @@ import { colorVariants, currency } from '@/admin/context/constants';
 import { toSentenceCase } from '@/admin/utils/change-casing';
 import { extendedTableData, tableData } from './data';
 import PageMetaData from '@/admin/components/PageTitle';
-import avatar6 from '../assets/images/users/avatar-6.jpg';
-import avatar7 from '../assets/images/users/avatar-7.jpg';
-import avatar8 from '../assets/images/users/avatar-8.jpg';
+
+import avatar6 from '../../../../assets/images/users/avatar-6.jpg';
+import avatar7 from '../../../../assets/images/users/avatar-7.jpg';
+import avatar8 from '../../../../assets/images/users/avatar-8.jpg';
 const BasicExample = () => {
   return <ComponentContainerCard id="basic" title="Basic Example" description={<>
           For basic styling—light padding and only horizontal dividers—add the base class <code>.table</code> to any <code>&lt;table&gt;</code>.

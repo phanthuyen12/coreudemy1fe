@@ -17,7 +17,7 @@ const toastify = ({
 const BasicToastifyExamples = () => {
   return <ComponentContainerCard id="basic" title="Basic Toastify JS Example" titleClass="mb-3">
       <div className="hstack flex-wrap gap-2">
-        <Button variant="light" type="button" onClick={() => toastify({
+        <Button  type="button" onClick={() => toastify({
         message: 'Welcome Back! This is a Toast Notification',
         props: {
           type: 'info',
@@ -26,7 +26,7 @@ const BasicToastifyExamples = () => {
       })} className=" w-xs">
           Default
         </Button>
-        <Button variant="light" type="button" onClick={() => toastify({
+        <Button  type="button" onClick={() => toastify({
         message: 'Your application was successfully sent',
         props: {
           type: 'success',
@@ -35,7 +35,7 @@ const BasicToastifyExamples = () => {
       })} className=" w-xs">
           Success
         </Button>
-        <Button variant="light" type="button" onClick={() => toastify({
+        <Button  type="button" onClick={() => toastify({
         message: 'Warning ! Something went wrong try again',
         props: {
           type: 'warning',
@@ -44,7 +44,7 @@ const BasicToastifyExamples = () => {
       })} className=" w-xs">
           Warning
         </Button>
-        <Button variant="light" type="button" onClick={() => toastify({
+        <Button  type="button" onClick={() => toastify({
         message: 'Error ! An error occurred.',
         props: {
           type: 'error',
@@ -60,7 +60,7 @@ const ToastPositions = () => {
   const positions = ['top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-right'];
   return <ComponentContainerCard id="display_position" title="Display Position Example" titleClass="mb-3">
       <div className="hstack flex-wrap gap-2">
-        {positions.map((position, idx) => <Button variant="light" type="button" key={idx} onClick={() => toastify({
+        {positions.map((position, idx) => <Button  type="button" key={idx} onClick={() => toastify({
         message: 'Welcome Back! This is a Toast Notification',
         props: {
           type: 'success',
@@ -75,7 +75,7 @@ const ToastPositions = () => {
 const DurationExample = () => {
   return <ComponentContainerCard id="rater" title="Offset,Hide Close Button & Duration Example" titleClass="mb-3">
       <div className="d-flex align-items-center flex-wrap gap-2">
-        <Button type="button" variant="light" className="w-xs" onClick={() => toastify({
+        <Button type="button"  className="w-xs" onClick={() => toastify({
         message: 'Welcome Back! This is a Toast Notification',
         props: {
           type: 'success',
@@ -85,7 +85,7 @@ const DurationExample = () => {
       })}>
           Hide Close icon
         </Button>
-        <Button type="button" variant="light" className="w-xs" onClick={() => toastify({
+        <Button type="button"  className="w-xs" onClick={() => toastify({
         message: 'Toast Duration 5s',
         props: {
           type: 'success',

@@ -3,16 +3,17 @@ import ComponentContainerCard from '@/admin/components/ComponentContainerCard';
 import PageBreadcrumb from '@/admin/components/layout/PageBreadcrumb';
 import UIExamplesList from '@/admin/components/UIExamplesList';
 import PageMetaData from '@/admin/components/PageTitle';
-import small2 from '../assets/images/small/img-2.jpg';
-import small3 from '../assets/images/small/img-3.jpg';
-import avatar2 from '../assets/images/users/avatar-2.jpg';
-import avatar3 from '../assets/images/users/avatar-3.jpg';
-import avatar4 from '../assets/images/users/avatar-4.jpg';
-import avatar5 from '../assets/images/users/avatar-5.jpg';
-import avatar6 from '../assets/images/users/avatar-6.jpg';
-import avatar7 from '../assets/images/users/avatar-7.jpg';
-import avatar8 from '../assets/images/users/avatar-8.jpg';
-import avatar9 from '../assets/images/users/avatar-9.jpg';
+
+import small2 from '../../../../assets/images/small/img-2.jpg';
+import small3 from '../../../../assets/images/small/img-3.jpg';
+import avatar2 from '../../../../assets/images/users/avatar-2.jpg';
+import avatar3 from '../../../../assets/images/users/avatar-3.jpg';
+import avatar4 from '../../../../assets/images/users/avatar-4.jpg';
+import avatar5 from '../../../../assets/images/users/avatar-5.jpg';
+import avatar6 from '../../../../assets/images/users/avatar-6.jpg';
+import avatar7 from '../../../../assets/images/users/avatar-7.jpg';
+import avatar8 from '../../../../assets/images/users/avatar-8.jpg';
+import avatar9 from '../../../../assets/images/users/avatar-9.jpg';
 const BasicExample = () => {
   return <ComponentContainerCard id="basic-example" title="Basic Example" description={<>
           Create and group avatars of different sizes and shapes with the css classes. Using Bootstrap&apos;s naming convention, you can control size

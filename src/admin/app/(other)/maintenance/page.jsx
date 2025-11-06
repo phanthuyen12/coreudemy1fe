@@ -2,7 +2,8 @@ import { Card, CardBody, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import LogoBox from '@/admin/components/LogoBox';
 import PageMetaData from '@/admin/components/PageTitle';
-import signInImg from '../assets/images/sign-in.svg';
+
+import signInImg from '../../../../assets/images/sign-in.svg';
 const Maintenance = () => {
   return <>
       <PageMetaData title="Maintenance" />

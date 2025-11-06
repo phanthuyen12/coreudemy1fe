@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import IconifyIcon from '@/admin/components/wrappers/IconifyIcon';
 import { toAlphaNumber } from '@/admin/utils/change-casing';
 import { timeSince } from '@/admin/utils/date';
-import avatar1 from '../assets/images/users/avatar-1.jpg';
+import avatar1 from '../../../../../../assets/images/users/avatar-1.jpg';
 const PostPhotos = ({
   photos
 }) => {

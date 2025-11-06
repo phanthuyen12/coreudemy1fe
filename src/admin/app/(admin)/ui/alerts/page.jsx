@@ -28,7 +28,7 @@ const BasicAlerts = () => {
       <Alert variant="info" role="alert">
         A simple info alert—check it out!
       </Alert>
-      <Alert variant="light" role="alert">
+      <Alert  role="alert">
         A simple light alert—check it out!
       </Alert>
       <Alert variant="dark" className="mb-0" role="alert">
@@ -60,7 +60,7 @@ const DismissibleAlerts = () => {
       <Alert variant="info" dismissible className="fade show" role="alert">
         A simple info alert—check it out!
       </Alert>
-      <Alert variant="light" dismissible className="fade show" role="alert">
+      <Alert  dismissible className="fade show" role="alert">
         A simple light alert—check it out!
       </Alert>
       <Alert variant="dark" dismissible className="fade show mb-0" role="alert">

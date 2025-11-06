@@ -5,7 +5,7 @@ import SimplebarReactClient from '@/admin/components/wrappers/SimplebarReactClie
 import { getAllEvents } from '@/admin/helpers/data';
 import useViewPort from '@/admin/hooks/useViewPort';
 import { getEventIcon } from '@/admin/utils/get-icons';
-import profileAvatar from '../assets/images/users/avatar-1.jpg';
+import profileAvatar from '../../../../../../assets/images/users/avatar-1.jpg';
 const EventsList = () => {
   const [eventsList, setEventsList] = useState();
   useEffect(() => {

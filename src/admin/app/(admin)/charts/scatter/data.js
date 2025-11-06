@@ -1,5 +1,6 @@
-import dribbble from '../assets/images/brands/dribbble.svg';
-import github from '../assets/images/brands/github.svg';
+
+import dribbble from '../../../../../assets/images/brands/dribbble.svg';
+import github from '../../../../../assets/images/brands/github.svg';
 function generateDayWiseTimeSeries(baseval, count, yrange) {
   let i = 0;
   const series = [];

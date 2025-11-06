@@ -22,6 +22,10 @@ export async function registerApi(payload) {
   return request('/auth/register', payload);
 }
 
+export async function resetPasswordApi(email) {
+  return request('/auth/forgot-password', { email });
+}
+
 export const authStorage = {
   getToken: () => localStorage.getItem('auth_token'),
   setToken: (token) => localStorage.setItem('auth_token', token),

@@ -7,6 +7,7 @@ const Sidebar = ({ isOpen, isMobile, onClose, onToggleSidebar, isStudyPage = fal
 
   const menuItems = [
     { name: "Dashboard", path: "/dashboard", icon: "ri:home-line", badge: null },
+    { name: "Tài liệu", path: "/documents", icon: "ri:file-list-line", badge: null },
     // { name: "Khóa học", path: "/courses", icon: "ri:book-line", badge: null },
     // { name: "Profile khóa học", path: "/course-profile", icon: "ri:bar-chart-line", badge: null },
     { name: "Đổi mật khẩu", path: "/change-password", icon: "ri:lock-line", badge: null },

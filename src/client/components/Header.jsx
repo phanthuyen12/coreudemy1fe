@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Icon as IconifyIcon } from '@iconify/react';
-import logoSrc from '../../assets/images/logo-dark-full.png';
+const logoSrc = '/logoh3.png';
 import { useAuth } from '../context/AuthContext';
 
 const Header = ({ onToggleSidebar, sidebarOpen, isMobile, hasSidebar = true }) => {
@@ -63,12 +63,17 @@ const Header = ({ onToggleSidebar, sidebarOpen, isMobile, hasSidebar = true }) =
   const NEW_MENU = [
     { key: 'program', label: 'Chương trình học', icon: 'ri:play-circle-line', href: '/#chuong-trinh' },
     { key: 'benefits', label: 'Quyền lợi', icon: 'ri:shield-check-line', href: '/#quyen-loi' },
-    { key: 'about', label: 'Lê Duy Hiệp là ai?', icon: 'ri:team-line', href: '/#ve-chung-toi' },
+    { key: 'about', label: '3H STATION là ai?', icon: 'ri:team-line', href: '/#ve-chung-toi' },
     { key: 'activities', label: 'Hoạt Động', icon: 'ri:archive-2-line', href: '/#hoat-dong' },
     { key: 'faq', label: 'Câu Hỏi Thường Gặp', icon: 'ri:question-answer-line', href: '/#faq' },
   ];
 
-  const clientMenuItems = NEW_MENU;
+  const APP_MENU = [
+    { key: 'dashboard', label: 'Dashboard', icon: 'ri:home-line', href: '/dashboard' },
+    { key: 'documents', label: 'Tài liệu', icon: 'ri:file-list-line', href: '/documents' },
+    { key: 'tickets', label: 'Tickets', icon: 'ri:ticket-line', href: '/tickets' },
+    { key: 'change-password', label: 'Đổi mật khẩu', icon: 'ri:lock-line', href: '/change-password' },
+  ];
 
   return (
     <>
@@ -103,7 +108,7 @@ const Header = ({ onToggleSidebar, sidebarOpen, isMobile, hasSidebar = true }) =
           }}
         >
           <span style={{ marginRight: '40px' }}>
-            Chi Phí • Kinh Doanh Hiệu Quả - Quảng Cáo TikTok Tăng Doanh Số - Tối Ưu Chi Phí • | Hotline kỹ thuật 
+            3H STATION: HỌC – HỎI – HÀNH VỚI AI & HỆ THỐNG KINH DOANH THÔNG MINH | Hotline kỹ thuật 
           </span>
          
         </div>
@@ -174,8 +179,8 @@ const Header = ({ onToggleSidebar, sidebarOpen, isMobile, hasSidebar = true }) =
           {/* Center: main navigation (desktop) */}
           <div className="d-none d-lg-flex flex-grow-1 ms-1 me-2">
             <nav >
-              {clientMenuItems.map((item) => (
-                <a key={item.key} href={item.url} className="header-link">
+              {NEW_MENU.map((item) => (
+                <a key={item.key} href={item.href} className="header-link">
                   {item.icon && <IconifyIcon icon={item.icon} />}
                   <span className="d-none d-xl-inline">{item.label}</span>
                 </a>
@@ -230,7 +235,7 @@ const Header = ({ onToggleSidebar, sidebarOpen, isMobile, hasSidebar = true }) =
               <a 
                 className="btn d-inline-flex align-items-center gap-2 px-3 py-2"
                 style={{ background:'#ffb300', color:'#000', border:'none', borderRadius:'10px', fontWeight:700 }}
-                href="/pricing"
+                href="/learn/study"
               >
                 <IconifyIcon icon="ri:fire-line" />
                 <span>NÂNG CẤP PRO</span>
@@ -292,7 +297,7 @@ const Header = ({ onToggleSidebar, sidebarOpen, isMobile, hasSidebar = true }) =
                         </div>
                       </div>
                     </div>
-                    <div className="px-3 py-2 border-bottom" style={{borderColor: '#222'}}>
+                    {/* <div className="px-3 py-2 border-bottom" style={{borderColor: '#222'}}>
                       <div className="d-flex align-items-center justify-content-between mb-2">
                         <span className="text-muted small">Affiliate Level</span>
                         <span className="small fw-bold" style={{color:'#ff4d4f'}}>{affiliateLevel}</span>
@@ -303,7 +308,7 @@ const Header = ({ onToggleSidebar, sidebarOpen, isMobile, hasSidebar = true }) =
                           <IconifyIcon icon="ri:file-copy-line" />
                         </button>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="p-2">
                       <a href="/change-password" className="w-100 text-start d-flex align-items-center gap-2 p-2 text-decoration-none"
                         style={{color:'#ddd', borderRadius:'8px'}}
@@ -343,12 +348,23 @@ const Header = ({ onToggleSidebar, sidebarOpen, isMobile, hasSidebar = true }) =
       <div className="mx-3" style={{ borderRadius: '12px', overflow: 'hidden', boxShadow: '0 12px 32px rgba(0,0,0,0.45)' }}>
         <div style={{ background: '#111', border: '1px solid #2a2a2a' }}>
           <nav className="d-flex flex-column py-2">
-            {clientMenuItems.map((item) => (
-              <a key={item.key} href={item.url} className="px-3 py-2 header-link" style={{ display: 'flex' }} onClick={() => setMobileMenuOpen(false)}>
+            {NEW_MENU.map((item) => (
+              <a key={item.key} href={item.href} className="px-3 py-2 header-link" style={{ display: 'flex' }} onClick={() => setMobileMenuOpen(false)}>
                 {item.icon && <IconifyIcon icon={item.icon} />}
                 <span className="ms-2">{item.label}</span>
               </a>
             ))}
+            {isAuthenticated && (
+              <>
+                <div className="px-3 pt-2 pb-1 text-muted small">Ứng dụng</div>
+                {APP_MENU.map((item) => (
+                  <a key={item.key} href={item.href} className="px-3 py-2 header-link" style={{ display: 'flex' }} onClick={() => setMobileMenuOpen(false)}>
+                    {item.icon && <IconifyIcon icon={item.icon} />}
+                    <span className="ms-2">{item.label}</span>
+                  </a>
+                ))}
+              </>
+            )}
           </nav>
         </div>
       </div>

@@ -461,7 +461,7 @@ const ModalWithAlerts = () => {
               <IconifyIcon icon="bx:check-double" className="display-6 mt-0 text-white" />
               <h4 className="mt-3 text-white">Well Done!</h4>
               <p className="mt-3">Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam.</p>
-              <Button variant="light" type="button" className="mt-3" onClick={toggleModal}>
+              <Button  type="button" className="mt-3" onClick={toggleModal}>
                 Continue
               </Button>
             </div>

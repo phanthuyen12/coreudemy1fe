@@ -1,0 +1,1 @@
+const s=e=>{var t,n;return((t=e.sale)==null?void 0:t.type)=="amount"?e.sale.discount:((n=e.sale)==null?void 0:n.type)=="percent"?e.price/100*e.sale.discount:0},r=e=>a(e.price-s(e)),a=e=>parseFloat(e.toFixed(2));export{r as g};
