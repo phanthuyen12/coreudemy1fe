@@ -37,7 +37,7 @@ npm install
 npm start
 ```
 
-项目将在 http://localhost:3000 运行
+项目将在 https://api.3hstation.com 运行
 
 ### 3. 构建生产版本
 

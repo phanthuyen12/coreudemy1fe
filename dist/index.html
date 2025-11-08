@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#000000" />
   <meta name="description" content="Học cách ứng dụng AI, Automation & tư duy tài chính hiện đại để xây dựng hệ thống bán hàng tự động – tạo dòng tiền thực tế. Học miễn phí – Trải nghiệm ngay hôm nay!" />
+  <meta name="description" content="THuyên" />
 
   <link rel="icon" href="/logoh3.png" />
   <!-- Optional PWA assets removed to avoid 404 during dev -->
@@ -15,6 +16,11 @@
   <meta property="og:description" content="Ứng dụng AI & Automation để tối ưu marketing, vận hành; xây dựng thương hiệu cá nhân và hệ thống bán hàng tự động đã kiểm chứng." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/logoh3.png" />
+  <title>3H STATION</title>
+
+  <!-- Load website config from API -->
+  <!-- <script src="/config.js"></script>
+  <script src="/load-website-config.js"></script> -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,7 +28,7 @@
 
   <!-- CSS từ public -->
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="/assets/css/main.css" />
+  <!-- <link rel="stylesheet" href="/assets/css/main.css" /> -->
   <link rel="stylesheet" href="/assets/css/apexcharts.css" />
   <link rel="stylesheet" href="/assets/css/calendar.css" />
   <link rel="stylesheet" href="/assets/css/file-upload.css" />
@@ -57,7 +63,7 @@
       pointer-events: none;
     }
   </style>
-  <script type="module" crossorigin src="/assets/index-BmJdQGgB.js"></script>
+  <script type="module" crossorigin src="/assets/index-UeTnRMFd.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-CvJXyVvx.css">
 </head>
 
@@ -67,6 +73,9 @@
   <div id="splash-screen">
     <img alt="Logo" class="light" src="/logoh3.png" style="height: 10%" />
   </div>
+  <!-- <div id="splash-screen"> -->
+    <!-- <img alt="Logo" class="light" src="/logo-dark-full.png" style="height: 10%" /> -->
+  <!-- </div> -->
 
   <!-- Removed legacy public scripts to avoid 404s and DOM errors during SPA dev -->
 
@@ -80,7 +89,7 @@
     const observer = new MutationObserver((mutationsList, observer) => {
       for (const mutation of mutationsList) {
         if (mutation.type === 'childList' && rootEl.hasChildNodes()) {
-          splashScreen.classList.add('remove');
+        splashScreen.classList.add('remove');
           observer.disconnect();
           break;
         }

@@ -28,7 +28,7 @@ export class videoCategoryService {
     return response.json();
   }
   static async getDetailCategorys(id) { 
-    // http://localhost:3000/categories/filter?courseId=1&limit=1000
+    // https://api.3hstation.com/categories/filter?courseId=1&limit=1000
     const response = await fetch(`${API_BASE_URL}/categories/filter/?courseId=${id}&limit=1000`);
     if (!response.ok) throw new Error("Failed to fetch video category details");
     return response.json();

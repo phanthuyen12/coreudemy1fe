@@ -1,0 +1,10 @@
+import{j as e,a as o,C as d,b as n,c as a,e as c}from"./index-UeTnRMFd.js";import{P as u}from"./PageBreadcrumb-Dw3pCXcc.js";import{P as h}from"./PageTitle-B6CXaB8D.js";import{C as t}from"./ComponentContainerCard-DN-_mefk.js";import{R as s}from"./quill.snow-Bc-o20dt.js";let i="",r="";r=i=`<h3><span class="ql-size-large">Hello World!</span></h3>
+    <p><br/></p>
+    <h3>This is a simple editable area.</h3>
+    <p><br/></p>
+    <ul>
+      <li>Select a text to reveal the toolbar.</li>
+      <li>Edit rich document on-the-fly, so elastic!</li>
+    </ul>
+<p><br/></p>
+<p>End of simple area</p>`;const m=()=>{const l={toolbar:[[{font:[]},{size:[]}],["bold","italic","underline","strike"],[{color:[]},{background:[]}],[{script:"super"},{script:"sub"}],[{header:[!1,1,2,3,4,5,6]},"blockquote","code-block"],[{list:"ordered"},{list:"bullet"},{indent:"-1"},{indent:"+1"}],["direction",{align:[]}],["link","image","video"],["clean"]]};return e.jsx(t,{id:"quill-snow-editor",title:"Snow Editor",description:e.jsxs(e.Fragment,{children:["Use ",e.jsx("code",{children:"snow-editor"})," id to set snow editor."]}),children:e.jsx(s,{id:"snow-editor",modules:l,defaultValue:r,theme:"snow"})})},b=()=>e.jsx(t,{id:"quill-snow-editor",title:"Snow Editor",description:e.jsxs(e.Fragment,{children:["Use ",e.jsx("code",{children:"snow-editor"})," id to set snow editor."]}),children:e.jsx("div",{id:"snow-editor",style:{height:300},children:e.jsx(s,{id:"bubble-editor",defaultValue:i,theme:"bubble",style:{height:300}})})}),p=()=>e.jsxs(e.Fragment,{children:[e.jsx(m,{}),e.jsx(b,{})]}),E=()=>e.jsxs(e.Fragment,{children:[e.jsx(u,{subName:"Form",title:"Editors"}),e.jsx(h,{title:"Editors"}),e.jsx(o,{children:e.jsxs(d,{xl:12,children:[e.jsx(n,{children:e.jsxs(a,{children:[e.jsxs(c,{as:"h5",className:"mb-1 anchor",id:"overview",children:["Overview",e.jsx("a",{className:"btn btn-sm btn-outline-success rounded-2 float-end",href:"https://quilljs.com/",target:"_blank",children:"Official Website"})]}),e.jsx("p",{className:"text-muted mb-3",children:"Quilljs is a lightweight and powerful datetime picker."})]})}),e.jsx(p,{})]})})]});export{E as default};

@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://api.3hstation.com';
 
 async function request(path, body) {
   const response = await fetch(`${API_BASE_URL}${path}`, {

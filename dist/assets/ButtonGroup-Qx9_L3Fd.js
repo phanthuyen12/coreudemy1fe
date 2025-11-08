@@ -1,0 +1,1 @@
+import{r as n,n as i,j as x,o as c}from"./index-UeTnRMFd.js";const m=n.forwardRef(({bsPrefix:o,size:r,vertical:t=!1,className:e,role:p="group",as:u="div",...f},l)=>{const s=i(o,"btn-group");let a=s;return t&&(a=`${s}-vertical`),x.jsx(u,{...f,ref:l,role:p,className:c(e,a,r&&`${s}-${r}`)})});m.displayName="ButtonGroup";export{m as B};

@@ -4,7 +4,7 @@ import { memeberController } from '../../admin/mvc/controllers/memebersControlle
 import { ticketController } from '../../admin/mvc/controllers/ticketController';
 
 // Định nghĩa URL cơ sở của API để dễ quản lý
-const API_BASE_URL = 'http://localhost:3000';
+const API_BASE_URL = 'https://api.3hstation.com';
 
 // SVG Icon Component (Không thay đổi)
 const Icon = ({ name, size = 20, color = 'currentColor' }) => {

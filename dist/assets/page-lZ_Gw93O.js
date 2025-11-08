@@ -1,0 +1,1 @@
+import{j as e}from"./index-UeTnRMFd.js";import{P as t}from"./PageBreadcrumb-Dw3pCXcc.js";import{P as a}from"./PageTitle-B6CXaB8D.js";const o=()=>e.jsxs(e.Fragment,{children:[e.jsx(t,{subName:"Pages",title:"Welcome"}),e.jsx(a,{title:"Welcome"})]});export{o as default};

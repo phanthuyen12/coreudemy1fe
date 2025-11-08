@@ -731,7 +731,7 @@ const LeanStudy = () => {
   {currentVideo?.url ? (
     <video 
       key={currentVideo.id} // để reset khi đổi video
-      src={`http://localhost:3000/uploads/videos/${currentVideo.url}`} 
+      src={`https://api.3hstation.com/uploads/videos/${currentVideo.url}`} 
       controls 
       autoPlay={isPlaying}
       style={{ width: "100%", height: "100%", borderRadius: "12px", objectFit: "cover" }}

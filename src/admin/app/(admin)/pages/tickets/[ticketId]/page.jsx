@@ -22,7 +22,7 @@ const AdminTicketDetailPage = () => {
   // Fetch ticket detail
   const fetchData = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/tickets/${id}`);
+      const response = await fetch(`https://api.3hstation.com/tickets/${id}`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -69,7 +69,7 @@ const AdminTicketDetailPage = () => {
     
     try {
       // Gửi request với FormData
-      const res = await fetch(`http://localhost:3000/tickets/${ticketId}/reply`, {
+      const res = await fetch(`https://api.3hstation.com/tickets/${ticketId}/reply`, {
         method: 'POST',
         body: formData, // Không cần header Content-Type, trình duyệt sẽ tự xử lý
       });
