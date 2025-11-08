@@ -29,4 +29,15 @@ export class videoProductService {
         if (!response.ok) throw new Error("Failed to update video product");
         return response.json();
     }
+
+    static async deleteVideo(id) {
+        const response = await fetch(`${API_BASE_URL}/videos/${id}`, {
+            method: "DELETE",
+        });
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.message || "Failed to delete video");
+        }
+        return response.json();
+    }
 }

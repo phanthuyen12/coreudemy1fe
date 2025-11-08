@@ -50,4 +50,18 @@ export class coursesController {
       throw err;
     }
   }
+
+  async deleteCourse(id) {
+    this.loading = true;
+    this.error = null;
+    try {
+      const result = await courseService.deleteCourse(id);
+      this.loading = false;
+      return result;
+    } catch (err) {
+      this.error = err.message;
+      this.loading = false;
+      throw err;
+    }
+  }
 }

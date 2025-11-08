@@ -144,13 +144,35 @@ const Courser = () => {
   };
 
   const onDelete = async (id) => {
-    if (window.confirm('Bạn có chắc chắn muốn xóa khóa học này?')) {
+    const result = await Swal.fire({
+      title: 'Bạn có chắc chắn?',
+      text: 'Bạn có chắc chắn muốn xóa khóa học này? Tất cả danh mục và video sẽ bị xóa.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Xóa',
+      cancelButtonText: 'Hủy'
+    });
+
+    if (result.isConfirmed) {
       try {
         await coursesControllers.deleteCourse(id);
         await fetchCourses();
+        Swal.fire({
+          icon: 'success',
+          title: 'Thành công',
+          text: 'Xóa khóa học thành công!',
+          timer: 2000,
+          showConfirmButton: false
+        });
       } catch (err) {
         console.error(err);
-        Swal.fire({ title: 'Lỗi', text: 'Không thể xóa khóa học', icon: 'error' });
+        Swal.fire({
+          title: 'Lỗi',
+          text: err.message || 'Không thể xóa khóa học',
+          icon: 'error'
+        });
       }
     }
   };
@@ -272,6 +294,10 @@ const Courser = () => {
   
   <Button size="sm" variant="success" title="Thêm videos" onClick={() => openVideos(c)}>
     <Icon icon="mdi:video-plus-outline" />
+  </Button>
+
+  <Button size="sm" variant="danger" title="Xóa" onClick={() => onDelete(c.id)}>
+    <Icon icon="mdi:delete-outline" />
   </Button>
 </td>
 

@@ -37,6 +37,20 @@ export class videoCategoriesController {
     return data;
 
   }
+
+  async deleteCategory(id) {
+    this.loading = true;
+    this.error = null;
+    try {
+      const result = await videoCategoryService.deleteCategory(id);
+      this.loading = false;
+      return result;
+    } catch (err) {
+      this.error = err.message;
+      this.loading = false;
+      throw err;
+    }
+  }
 }
 
 
