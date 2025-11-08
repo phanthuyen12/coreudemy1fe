@@ -41,5 +41,16 @@ export class courseService {
     return res.json();
   }
 
+  static async deleteCourse(id) {
+    const response = await fetch(`${API_BASE_URL}/courses/${id}`, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.message || "Failed to delete course");
+    }
+    return response.json();
+  }
+
   
 }

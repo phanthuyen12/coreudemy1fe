@@ -214,8 +214,38 @@ const CourseVideosPage = () => {
     }
   };
 
-  const onDelete = (id) => {
-    // Delete logic...
+  const onDelete = async (id) => {
+    const result = await Swal.fire({
+      title: 'Bạn có chắc chắn?',
+      text: 'Bạn có chắc chắn muốn xóa video này?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Xóa',
+      cancelButtonText: 'Hủy'
+    });
+
+    if (result.isConfirmed) {
+      try {
+        await vCtrl.deleteVideo(id);
+        await fetchVideos();
+        Swal.fire({
+          icon: 'success',
+          title: 'Thành công',
+          text: 'Xóa video thành công!',
+          timer: 2000,
+          showConfirmButton: false
+        });
+      } catch (err) {
+        console.error(err);
+        Swal.fire({
+          title: 'Lỗi',
+          text: err.message || 'Không thể xóa video',
+          icon: 'error'
+        });
+      }
+    }
   };
 
   const totalPages = Math.max(1, Math.ceil(totalVideos / filter.limit));
@@ -353,12 +383,9 @@ const CourseVideosPage = () => {
                           <Button size="sm" variant="light" title="Sửa" onClick={() => openEdit(v)}>
                               <Icon icon="mdi:pencil-outline" className="text-primary" />
                           </Button>
-                          {/* Using Link is also fine, but button onClick is more consistent with the Add modal */}
-                          {/* <Link to={`/page/videos/detail/${v.id}?module=admin`}>
-                            <Button size="sm" variant="light" title="Sửa">
-                                <Icon icon="mdi:pencil-outline" className="text-primary" />
-                            </Button>
-                          </Link> */}
+                          <Button size="sm" variant="danger" title="Xóa" onClick={() => onDelete(v.id)}>
+                              <Icon icon="mdi:delete-outline" />
+                          </Button>
                         </td>
                       </tr>
                     ))
@@ -576,6 +603,8 @@ const CourseVideosPage = () => {
 };
 
 export default CourseVideosPage;
+
+
 
 
 

@@ -33,6 +33,17 @@ export class videoCategoryService {
     if (!response.ok) throw new Error("Failed to fetch video category details");
     return response.json();
   }
+
+  static async deleteCategory(id) {
+    const response = await fetch(`${API_BASE_URL}/categories/${id}`, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.message || "Failed to delete category");
+    }
+    return response.json();
+  }
 }
 
 

@@ -127,6 +127,40 @@ const onSubmit = async (e) => {
     await fetchData();
   };
 
+  const onDelete = async (id) => {
+    const result = await Swal.fire({
+      title: 'Bạn có chắc chắn?',
+      text: 'Bạn có chắc chắn muốn xóa danh mục này? Các video thuộc danh mục này cũng sẽ bị xóa.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Xóa',
+      cancelButtonText: 'Hủy'
+    });
+
+    if (result.isConfirmed) {
+      try {
+        await ctrl.deleteCategory(id);
+        await fetchData();
+        Swal.fire({
+          icon: 'success',
+          title: 'Thành công',
+          text: 'Xóa danh mục thành công!',
+          timer: 2000,
+          showConfirmButton: false
+        });
+      } catch (err) {
+        console.error(err);
+        Swal.fire({
+          title: 'Lỗi',
+          text: err.message || 'Không thể xóa danh mục',
+          icon: 'error'
+        });
+      }
+    }
+  };
+
   return (
     <>
       <PageBreadcrumb subName="Pages" title="Danh mục Video" />
@@ -202,6 +236,9 @@ const onSubmit = async (e) => {
                         </Button>
                         <Button size="sm" variant={item.active === 1 ? 'warning' : 'success'} onClick={() => toggleStatusLocal(item.id)}>
                           <Icon icon="mdi:power" />
+                        </Button>
+                        <Button size="sm" variant="danger" onClick={() => onDelete(item.id)}>
+                          <Icon icon="mdi:delete-outline" />
                         </Button>
                       </div>
                     </td>

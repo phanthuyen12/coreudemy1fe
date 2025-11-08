@@ -40,4 +40,18 @@ export class videosProductController {
         return updatedVideo;
         
     }
+
+    async deleteVideo(id) {
+        this.loading = true;
+        this.error = null;
+        try {
+            const result = await videoProductService.deleteVideo(id);
+            this.loading = false;
+            return result;
+        } catch (err) {
+            this.error = err.message;
+            this.loading = false;
+            throw err;
+        }
+    }
 }
